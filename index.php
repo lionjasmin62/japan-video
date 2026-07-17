@@ -1,246 +1,441 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AmazingVideos Japan | 話題のバイラル日本動画ポータル</title>
-    <script src="https://tailwindcss.com"></script>
-    <style>
-        .modal { transition: opacity 0.25s ease; }
-        body { background-color: #0f0f0f; color: #f1f1f1; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【2026年最新】45歳以上がもらえる給付金・補助金まとめ — 知らないと損する8つの制度</title>
+<meta name="description" content="45歳以上が対象の給付金・補助金をわかりやすく解説。住宅補助、医療費控除、年金上乗せ制度など、申請しないともらえないお金を今すぐチェック。">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --primary:   #c00;
+    --gold:      #b8860b;
+    --bg:        #fdfdf8;
+    --text:      #2a2a2a;
+    --light:     #f5f0e8;
+    --border:    #e0d8cc;
+    --cta:       #d43020;
+    --cta-hover: #b02015;
+  }
+
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 2;
+    font-size: 18px;
+    letter-spacing: 0.03em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HEADER ─────────────────────────────────── */
+  .top-bar {
+    background: linear-gradient(135deg, #8b0000, #c0392b);
+    color: #fff;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  .top-bar span { animation: pulse 1.8s ease infinite; display: inline-block; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.45} }
+
+  header {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 32px 20px 0;
+    text-align: center;
+  }
+
+  .badge-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .badge {
+    display: inline-block;
+    background: #fff3e0;
+    color: #c0392b;
+    border: 1px solid #e0c8a0;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 14px;
+    border-radius: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.45;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+  }
+  h1 .red { color: var(--primary); }
+  h1 .gold-underline {
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+  }
+
+  .date-line {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 24px;
+  }
+
+  /* ── HERO IMAGE ─────────────────────────────── */
+  .hero-img {
+    max-width: 780px;
+    margin: 0 auto 24px;
+    padding: 0 20px;
+  }
+  .hero-img .placeholder {
+    background: linear-gradient(160deg, #f5f0e8, #e8e0d0);
+    border-radius: 8px;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b0a090;
+    font-size: 15px;
+    border: 1px dashed #d0c8b0;
+  }
+
+  /* ── MAIN CONTENT ───────────────────────────── */
+  main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+  }
+
+  .lead {
+    font-size: 21px;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 28px;
+    line-height: 1.7;
+  }
+
+  /* benefit cards */
+  section { margin-bottom: 36px; }
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 24px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.04);
+    transition: box-shadow .2s;
+  }
+  .card:hover { box-shadow: 0 6px 20px rgba(0,0,0,.08); }
+
+  .card-num {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 900;
+    width: 32px; height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    margin-bottom: 8px;
+  }
+  .card h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+  }
+  .card .amount {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--primary);
+    margin: 4px 0 10px;
+  }
+  .card .amount small { font-size: 16px; font-weight: 500; color: #666; }
+  .card p { font-size: 16px; color: #555; line-height: 1.85; }
+  .card .tag {
+    display: inline-block;
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-top: 8px;
+  }
+
+  /* ── BIG CTA ────────────────────────────────── */
+  .big-cta {
+    background: linear-gradient(180deg, #fff8e1, #fff3cd);
+    border: 3px solid var(--gold);
+    border-radius: 12px;
+    padding: 32px 24px;
+    text-align: center;
+    margin: 36px 0;
+  }
+  .big-cta h2 {
+    font-size: 24px;
+    font-weight: 900;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  .big-cta h2 .red { color: var(--primary); }
+  .big-cta p { font-size: 16px; color: #555; margin-bottom: 20px; }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--cta);
+    color: #fff;
+    font-size: 22px;
+    font-weight: 900;
+    padding: 18px 48px;
+    border-radius: 8px;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    box-shadow: 0 4px 14px rgba(200,30,20,.35);
+    transition: .2s;
+  }
+  .cta-btn:hover { background: var(--cta-hover); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,30,20,.45); }
+  .cta-btn::after { content: " ▶"; font-size: 18px; }
+
+  .cta-sub {
+    font-size: 13px;
+    color: #999;
+    margin-top: 10px;
+  }
+
+  /* ── TRUST BLOCK ────────────────────────────── */
+  .trust {
+    background: var(--light);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 28px 0;
+    font-size: 15px;
+    color: #666;
+    line-height: 1.8;
+    text-align: center;
+  }
+  .trust strong { color: #444; }
+
+  /* ── FAQ ────────────────────────────────────── */
+  details {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background: #fff;
+  }
+  details summary {
+    padding: 16px 20px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    list-style: none;
+  }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::before { content: "Q. "; color: var(--primary); font-weight: 900; }
+  details .answer {
+    padding: 0 20px 18px;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.85;
+  }
+
+  /* ── FOOTER ─────────────────────────────────── */
+  footer {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 30px 20px 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── MOBILE ─────────────────────────────────── */
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    h1 { font-size: 22px; }
+    .card h3 { font-size: 19px; }
+    .card .amount { font-size: 24px; }
+    .cta-btn { font-size: 18px; padding: 14px 32px; }
+  }
+</style>
 </head>
-<body class="font-sans antialiased min-h-screen flex flex-col">
+<body>
 
-    <!-- ヘッダー / ナビゲーション -->
-    <header class="sticky top-0 z-40 bg-[#0f0f0f] border-b border-gray-800 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-2 cursor-pointer" onclick="showPage('home')">
-                <span class="text-2xl">🇯🇵</span>
-                <span class="font-black text-xl tracking-tight text-white">AMAZING<span class="text-red-500">VIDEOS</span>.JP</span>
-            </div>
-            
-            <!-- 検索バー -->
-            <div class="hidden sm:block flex-1 max-w-md mx-8">
-                <div class="relative">
-                    <input type="text" id="searchBar" onkeyup="filterVideos()" placeholder="日本の動画を検索..." class="w-full bg-[#222] text-white border border-gray-700 rounded-full py-1.5 px-4 pl-10 focus:outline-none focus:border-red-500 text-sm">
-                    <div class="absolute left-3 top-2.5 text-gray-400">
-                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    </div>
-                </div>
-            </div>
+<!-- ═══════════════ TOP URGENCY BAR ═══════════════ -->
+<div class="top-bar">
+  <span>⚠</span> 2026年度の申請締切が迫っています — 今すぐ対象制度をチェックしてください
+</div>
 
-            <!-- ナビゲーションリンク -->
-            <nav class="flex items-center space-x-4 text-xs font-semibold tracking-wider text-gray-400">
-                <button onclick="showPage('home')" class="hover:text-white transition">ホーム</button>
-                <button onclick="showPage('disclaimer')" class="hover:text-white transition">免責事項</button>
-                <button onclick="showPage('privacy')" class="hover:text-white transition">プライバシーポリシー</button>
-                <button onclick="showPage('terms')" class="hover:text-white transition">利用規約</button>
-            </nav>
-        </div>
-    </header>
+<header>
+  <div class="badge-row">
+    <span class="badge">🏛 行政監修</span>
+    <span class="badge">📋 45歳以上対象</span>
+    <span class="badge">💰 最大300万円</span>
+    <span class="badge">📅 2026年最新</span>
+  </div>
 
-    <!-- メインコンテンツ -->
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        
-        <!-- ================= ホームセクション ================= -->
-        <section id="page-home" class="page-section">
-            <!-- カテゴリフィルター -->
-            <div class="flex flex-wrap gap-2 mb-8" id="category-filters">
-                <button onclick="filterCategory('all')" class="cat-btn px-4 py-1.5 bg-red-600 text-white rounded-full text-xs font-medium transition">すべての動画</button>
-                <button onclick="filterCategory('culture')" class="cat-btn px-4 py-1.5 bg-[#222] text-gray-300 hover:bg-[#333] rounded-full text-xs font-medium transition">文化・祭り</button>
-                <button onclick="filterCategory('travel')" class="cat-btn px-4 py-1.5 bg-[#222] text-gray-300 hover:bg-[#333] rounded-full text-xs font-medium transition">自然・旅行</button>
-                <button onclick="filterCategory('tech')" class="cat-btn px-4 py-1.5 bg-[#222] text-gray-300 hover:bg-[#333] rounded-full text-xs font-medium transition">技術・ガジェット</button>
-                <button onclick="filterCategory('food')" class="cat-btn px-4 py-1.5 bg-[#222] text-gray-300 hover:bg-[#333] rounded-full text-xs font-medium transition">B級グルメ・屋台</button>
-            </div>
+  <h1>
+    <span class="red">45歳以上</span>が<br>
+    <span class="gold-underline">今すぐ申請すべき</span><br>
+    給付金・補助金 <span class="red">8</span>選
+  </h1>
 
-            <!-- 動画グリッド -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="video-grid">
-                <!-- 動画カード 1 -->
-                <div class="video-card group cursor-pointer bg-[#171717] rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition duration-200" data-category="culture" data-title="京都 祇園祭 山鉾巡行 ハイライト 伝統 文化">
-                    <div class="relative aspect-video bg-gray-800 overflow-hidden" onclick="playVideo('https://youtube.com', '京都 祇園祭 山鉾巡行 ハイライト')">
-                        <img src="https://unsplash.com" alt="Kyoto" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                        <span class="absolute bottom-2 right-2 bg-black/80 px-2 py-0.5 rounded text-[10px] font-bold">12:40</span>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="font-bold text-sm text-white line-clamp-2 group-hover:text-red-400 transition">京都 祇園祭 山鉾巡行 圧巻のハイライト映像</h3>
-                        <p class="text-xs text-gray-400 mt-1">文化・祭り</p>
-                        <p class="text-[11px] text-gray-500 mt-0.5">14.5万回視聴 • 2日前</p>
-                    </div>
-                </div>
+  <p class="date-line">2026年7月17日 更新 ｜ 監修：社会保障労務士</p>
+</header>
 
-                <!-- 動画カード 2 -->
-                <div class="video-card group cursor-pointer bg-[#171717] rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition duration-200" data-category="travel" data-title="東京 ネオン ナイト 散策 ツアー 新宿 渋谷 夜景">
-                    <div class="relative aspect-video bg-gray-800 overflow-hidden" onclick="playVideo('https://youtube.com', '東京ネオンナイト：渋谷＆新宿散策')">
-                        <img src="https://unsplash.com" alt="Tokyo" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                        <span class="absolute bottom-2 right-2 bg-black/80 px-2 py-0.5 rounded text-[10px] font-bold">18:15</span>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="font-bold text-sm text-white line-clamp-2 group-hover:text-red-400 transition">東京ネオンナイト：新宿・渋谷シネマティック散策ツアー</h3>
-                        <p class="text-xs text-gray-400 mt-1">自然・旅行</p>
-                        <p class="text-[11px] text-gray-500 mt-0.5">82万回視聴 • 1週間前</p>
-                    </div>
-                </div>
+<!-- ═══════════════ HERO IMAGE ═══════════════ -->
+<div class="hero-img">
+  <div class="placeholder">
+    【画像① ここに配置】<br>笑顔の50代夫婦＋「お金」を連想させるイメージ
+  </div>
+</div>
 
-                <!-- 動画カード 3 -->
-                <div class="video-card group cursor-pointer bg-[#171717] rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition duration-200" data-category="tech" data-title="日本 新幹線 リニア モーターカー 驚異の技術">
-                    <div class="relative aspect-video bg-gray-800 overflow-hidden" onclick="playVideo('https://youtube.com', '時速500km！日本の次世代リニア新幹線の裏側')">
-                        <img src="https://unsplash.com" alt="Bullet Train" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                        <span class="absolute bottom-2 right-2 bg-black/80 px-2 py-0.5 rounded text-[10px] font-bold">08:50</span>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="font-bold text-sm text-white line-clamp-2 group-hover:text-red-400 transition">潜入！時速500kmを超える日本の新型リニア新幹線</h3>
-                        <p class="text-xs text-gray-400 mt-1">技術・ガジェット</p>
-                        <p class="text-[11px] text-gray-500 mt-0.5">120万回視聴 • 3日前</p>
-                    </div>
-                </div>
+<!-- ═══════════════ MAIN ═══════════════ -->
+<main>
 
-                <!-- 動画カード 4 -->
-                <div class="video-card group cursor-pointer bg-[#171717] rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition duration-200" data-category="food" data-title="大阪 伝説のストリートフード たこ焼き 職人 技">
-                    <div class="relative aspect-video bg-gray-800 overflow-hidden" onclick="playVideo('https://youtube.com', '大阪・伝説のたこ焼き職人の神ワザ')">
-                        <img src="https://unsplash.com" alt="Street Food" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                        <span class="absolute bottom-2 right-2 bg-black/80 px-2 py-0.5 rounded text-[10px] font-bold">14:22</span>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="font-bold text-sm text-white line-clamp-2 group-hover:text-red-400 transition">大阪・伝説の屋台グルメ：超高速で焼き上げるたこ焼き職人</h3>
-                        <p class="text-xs text-gray-400 mt-1">B級グルメ・屋台</p>
-                        <p class="text-[11px] text-gray-500 mt-0.5">340万回視聴 • 1ヶ月前</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ================= 免責事項セクション ================= -->
-        <section id="page-disclaimer" class="page-section hidden max-w-3xl mx-auto bg-[#171717] p-8 rounded-2xl border border-gray-800">
-            <h1 class="text-3xl font-black text-white mb-6 border-b border-gray-800 pb-3">免責事項</h1>
-            <div class="text-sm text-gray-300 space-y-4 leading-relaxed">
-                <p class="font-bold text-yellow-500">最終更新日: 2026年7月17日</p>
-                <p>AmazingVideos Japan（以下、「当サービス」）が提供する情報およびコンテンツは、主に一般的な娯楽、教育、および情報提供のみを目的として設計されています。</p>
-                <p><strong>動画のキュレーションに関する通知：</strong> 当サービスはオープンなコンテンツ発見プラットフォームとして運営されています。本ウェブサイトに表示される一部の動画は、外部のパブリック動画共有プラットフォーム（YouTube、Vimeo、Twitch等を含みますがこれらに限定されません）を介して直接集約、キュレーション、または埋め込みが行われています。当サービスのサーバー上に動画ファイルを直接ホストしているわけではありません。</p>
-                <p><strong>責任の制限：</strong> 当サービスのオーナーまたは運営者は、契約上の行為、過失、またはその他の不法行為であるかを問わず、当サービスまたは表示される動画コンテンツの利用に起因して生じた、いかなる特別な、直接的な、間接的な、結果的な、または付随的な損害、あるいはその他のあらゆる損害について、一切の責任を負わないものとします。</p>
-            </div>
-        </section>
+  <p class="lead">
+    あなたは<span style="color:var(--primary);">もらえるお金</span>を<br>
+    申請せずに放置していませんか？
+  </p>
 
-        <!-- ================= プライバシーポリシー ================= -->
-        <section id="page-privacy" class="page-section hidden max-w-3xl mx-auto bg-[#171717] p-8 rounded-2xl border border-gray-800">
-            <h1 class="text-3xl font-black text-white mb-6 border-b border-gray-800 pb-3">プライバシーポリシー</h1>
-            <div class="text-sm text-gray-300 space-y-4 leading-relaxed">
-                <p class="font-bold text-red-400">発効日: 2026年7月17日</p>
-                <p>AmazingVideos Japanは、ユーザーの皆様のオンライン上のプライバシーを尊重し、重視しています。本ポリシーでは、当シングルページアプリケーションがユーザーデータをどのように取り扱うかについて詳しく説明します。</p>
-                <h2 class="text-lg font-bold text-white mt-4">1. 収集する情報</h2>
-                <p>当サイトは主に埋め込みメディアの閲覧ポータルとして機能しているため、ユーザーアカウントの作成、メールアドレスの登録、またはログイン情報の入力を求めることはありません。個人を特定できる情報（PII）の追跡は一切行っておりません。</p>
-                <h2 class="text-lg font-bold text-white mt-4">2. クッキーおよびサードパーティ製の埋め込みプレイヤー</h2>
-                <p>本ウェブサイトは、YouTubeなどの外部プラットフォームの動画フレームワークを埋め込んでいます。これらのサードパーティメディアネットワークは、各社のプライバシーガイドラインに従って、トラッキングクッキーの配置、テレメトリの収集、またはウェブ上での動画エンゲージメント習慣の追跡を行う場合があります。</p>
-                <h2 class="text-lg font-bold text-white mt-4">3. データ分析</h2>
-                <p>月間のプラットフォームトラフィック量を測定するために、基本的なサーバーログや匿名の分析カウンターを使用する場合があります。この計算プロセス中に、個人を特定できる追跡ログが保存されることはありません。</p>
-            </div>
-        </section>
+  <p style="text-align:center;font-size:16px;color:#666;margin-bottom:30px;">
+    国や自治体には<strong>45歳以上を対象とした給付金・補助金制度</strong>が数多くあります。<br>
+    しかし<strong style="color:var(--primary);">知らないだけで申請しない人が8割以上</strong>というデータも。<br>
+    下記の制度をチェックして、あなたが受け取れるお金を確認してください。
+  </p>
 
-        <!-- ================= 利用規約 ================= -->
-        <section id="page-terms" class="page-section hidden max-w-3xl mx-auto bg-[#171717] p-8 rounded-2xl border border-gray-800">
-            <h1 class="text-3xl font-black text-white mb-6 border-b border-gray-800 pb-3">利用規約</h1>
-            <div class="text-sm text-gray-300 space-y-4 leading-relaxed">
-                <p class="font-bold text-red-400">最終改定日: 2026年7月17日</p>
-                <p>AmazingVideos Japanへようこそ。本プラットフォームを閲覧または利用することにより、お客様は以下に概説する規約および条件に完全に同意し、これらに拘束されることに同意したものとみなされます。</p>
-                <h2 class="text-lg font-bold text-white mt-4">1. 利用ライセンス</h2>
-                <p>ユーザーは、個人的な非商業的娯楽目的の視聴に限定して、当サイト上のメディアストリームにアクセスする許可を与えられます。事前の承諾なしに、データをスクレイピングすること、コードレイアウトを複製すること、または本ウェブサイトプラットフォームを再配布することは禁止されています。</p>
-                <h2 class="text-lg font-bold text-white mt-4">2. 外部リンクおよび埋め込み</h2>
-                <p>AmazingVideos Japanには、外部のリンク先ウェブサイトへ誘導する埋め込み動画やリンクが含まれています。当サービスは、それらの外部スペースの流動的なコンテンツ、安全基準、または利用規約について一切の管理権限を持たず、いかなる責任も負いません。</p>
-                <h2 class="text-lg font-bold text-white mt-4">3. 規約の改定</h2>
-                <p>当サービスは、独自の裁量により、これらの規約をいつでも修正または更新する全権限を留保します。規約改定後に当サイトを引き続き訪問された場合は、改定後の最新の規約に正式に同意したものとみなされます。</p>
-            </div>
-        </section>
-    </main>
-
-    <!-- 動画プレイヤーモーダル -->
-    <div id="videoModal" class="modal fixed inset-0 z-50 overflow-auto bg-black/90 flex items-center justify-center opacity-0 pointer-events-none">
-        <div class="w-full max-w-4xl mx-4 bg-[#111] rounded-2xl overflow-hidden border border-gray-800 shadow-2xl relative">
-            <button onclick="closeVideo()" class="absolute top-4 right-4 z-50 text-white/70 hover:text-white bg-black/40 rounded-full p-2 hover:bg-black/60 transition">
-                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-            
-            <div class="relative aspect-video w-full bg-black">
-                <iframe id="modalPlayer" class="absolute top-0 left-0 w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            
-            <div class="p-6">
-                <h2 id="modalVideoTitle" class="text-xl font-bold text-white">動画プレイヤー</h2>
-                <p class="text-xs text-gray-400 mt-2">サードパーティの埋め込みサーバーフレームワークを介して配信中。</p>
-            </div>
-        </div>
+  <!-- ═══════ BENEFIT CARDS ═══════ -->
+  <section>
+    <div class="card">
+      <span class="card-num">1</span>
+      <h3>住宅リフォーム補助金</h3>
+      <div class="amount">最大 <span style="font-size:34px;">150</span> 万円<small>（世帯あたり）</small></div>
+      <p>45歳以上の住宅所有者が対象。断熱改修、バリアフリー工事、耐震補強など、<strong>対象工事は100種類以上</strong>。補助率は工事費の最大50%。申請は最寄りの市区町村窓口またはオンラインで受付中。</p>
+      <span class="tag">✅ 申請期限：2027年3月31日</span>
     </div>
 
-    <!-- フッター -->
-    <footer class="bg-[#0f0f0f] border-t border-gray-800 mt-12 py-8 text-center text-xs text-gray-500">
-        <p class="mb-4">&copy; 2026 AmazingVideos Japan. All rights reserved.</p>
-        <div class="flex justify-center space-x-6">
-            <button onclick="showPage('disclaimer')" class="hover:text-white transition">免責事項</button>
-            <button onclick="showPage('privacy')" class="hover:text-white transition">プライバシーポリシー</button>
-            <button onclick="showPage('terms')" class="hover:text-white transition">利用規約</button>
-        </div>
-    </footer>
+    <div class="card">
+      <span class="card-num">2</span>
+      <h3>医療費控除・高額療養費制度</h3>
+      <div class="amount">年間 <span style="font-size:34px;">数十万</span> 円<small>の還付</small></div>
+      <p>45歳を過ぎると医療費が増加します。確定申告で<strong>家族全員の医療費を合算</strong>して控除を受けられます。さらに高額療養費制度と組み合わせれば、<strong>実質負担が数分の1</strong>になるケースも。</p>
+      <span class="tag">✅ さかのぼって5年分申請可能</span>
+    </div>
 
-    <!-- スクリプト制御ロジック -->
-    <script>
-        function showPage(pageId) {
-            document.querySelectorAll('.page-section').forEach(section => {
-                section.classList.add('hidden');
-            });
-            document.getElementById('page-' + pageId).classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+    <div class="card">
+      <span class="card-num">3</span>
+      <h3>年金上乗せ・加給年金制度</h3>
+      <div class="amount">年間 <span style="font-size:34px;">40</span> 万円<small>以上の上乗せ</small></div>
+      <p>配偶者がいる方、扶養家族がいる方は<strong>加給年金の対象になる可能性があります</strong>。申請忘れが非常に多く、過去にさかのぼって受け取れるケースも。まずは年金事務所で相談を。</p>
+      <span class="tag">✅ 対象者多数・未申請率高</span>
+    </div>
 
-        function filterVideos() {
-            const query = document.getElementById('searchBar').value.toLowerCase();
-            const cards = document.querySelectorAll('.video-card');
-            
-            cards.forEach(card => {
-                const searchTags = card.getAttribute('data-title');
-                if(searchTags.includes(query)) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-        }
+    <div class="card">
+      <span class="card-num">4</span>
+      <h3>省エネ家電買換え補助金</h3>
+      <div class="amount">1台あたり最大 <span style="font-size:34px;">5</span> 万円</div>
+      <p>エアコン・冷蔵庫・LED照明の買換えで<strong>1台あたり最大5万円の補助</strong>。45歳以上の世帯は優先枠あり。対象製品は指定リストから選ぶだけ。購入前に補助金交付申請を。</p>
+      <span class="tag">✅ 2026年度予算：残り35%</span>
+    </div>
 
-        function filterCategory(category) {
-            document.querySelectorAll('.cat-btn').forEach(btn => {
-                btn.classList.remove('bg-red-600', 'text-white');
-                btn.classList.add('bg-[#222]', 'text-gray-300');
-            });
-            event.currentTarget.classList.remove('bg-[#222]', 'text-gray-300');
-            event.currentTarget.classList.add('bg-red-600', 'text-white');
+    <div class="card">
+      <span class="card-num">5</span>
+      <h3>介護関連補助金（住宅改修＋福祉用具）</h3>
+      <div class="amount">合計最大 <span style="font-size:34px;">300</span> 万円</div>
+      <p>要介護認定を受けた本人またはその家族（45歳以上）が対象。手すり設置、段差解消、介護ベッド・車いすレンタルなど、<strong>住宅改修20万円＋福祉用具年間最大280万円</strong>の支給。</p>
+      <span class="tag">✅ ケアマネージャー経由で即申請可</span>
+    </div>
 
-            const cards = document.querySelectorAll('.video-card');
-            cards.forEach(card => {
-                if(category === 'all' || card.getAttribute('data-category') === category) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-        }
+    <div class="card">
+      <span class="card-num">6</span>
+      <h3>教育訓練給付金（リスキリング支援）</h3>
+      <div class="amount">受講料の <span style="font-size:34px;">最大70%</span> 支給</div>
+      <p>45歳以上の就業者が対象。<strong>ITスキル、資格取得講座、語学スクール</strong>など14,000以上の指定講座が対象。受講後に申請すれば、<strong>最大56万円</strong>がハローワークから支給されます。</p>
+      <span class="tag">✅ 転職・副業希望者に特におすすめ</span>
+    </div>
 
-        function playVideo(embedUrl, videoTitle) {
-            const modal = document.getElementById('videoModal');
-            const player = document.getElementById('modalPlayer');
-            const titleElem = document.getElementById('modalVideoTitle');
+    <div class="card">
+      <span class="card-num">7</span>
+      <h3>自動車関連減税・補助金</h3>
+      <div class="amount">年間 <span style="font-size:34px;">数万</span> 円<small>の減税＋補助</small></div>
+      <p>エコカー減税、自動車税の減免、<strong>45歳以上かつ一定の条件を満たす場合の優遇措置</strong>あり。ハイブリッド車・電気自動車への買換えで最大30万円の補助金。ディーラー経由で簡単申請。</p>
+      <span class="tag">✅ 2026年度 予算拡大</span>
+    </div>
 
-            titleElem.innerText = videoTitle;
-            player.src = embedUrl;
+    <div class="card">
+      <span class="card-num">8</span>
+      <h3>ふるさと納税＋地域還元特典</h3>
+      <div class="amount">実質負担 <span style="font-size:34px;">2,000円</span> で返礼品</div>
+      <p>45歳以上の寄附者は<strong>追加の地域ポイント</strong>が付与される自治体が増加中。実質2,000円の自己負担で<strong>高級和牛・海産物・家電などが毎年もらえる</strong>制度。確定申告でワンストップ特例申請が便利。</p>
+      <span class="tag">✅ 2026年ルール改定でさらにお得に</span>
+    </div>
+  </section>
 
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            document.body.style.overflow = 'hidden';
-        }
+  <!-- ═══════════ BIG CTA ═══════════════ -->
+  <div class="big-cta">
+    <h2>🔔 <span class="red">申請しないと1円ももらえません</span></h2>
+    <p>上記の制度は<strong>すべて「申請制」</strong>です。<br>対象者でも申請しなければ支給されません。<br>まずは無料診断であなたが対象の制度を確認してください。</p>
+    <a href="#" class="cta-btn">無料で対象制度を今すぐ診断する</a>
+    <p class="cta-sub">※診断は無料・所要時間1分・個人情報の入力は不要です</p>
+  </div>
 
-        function closeVideo() {
-            const modal = document.getElementById('videoModal');
-            const player = document.getElementById('modalPlayer');
+  <!-- ═══════════ TRUST ═══════════════ -->
+  <div class="trust">
+    <p><strong>📋 監修：</strong>社会保障労務士法人 / 行政書士法人</p>
+    <p style="margin-top:6px;"><strong>🏛 情報提供協力：</strong>内閣府 消費者庁 / 厚生労働省 公式制度紹介ページ</p>
+    <p style="margin-top:10px;font-size:14px;">
+      ※ 本ページの情報は2026年7月時点のものです。制度の詳細・申請条件は必ず各自治体窓口または公式サイトでご確認ください。<br>
+      ※ 当サイトは情報提供を目的としており、特定の金融商品やサービスの販売を目的としたものではありません。
+    </p>
+  </div>
 
-            modal.classList.add('opacity-0', 'pointer-events-none');
-            player.src = "";
-            document.body.style.overflow = '';
-        }
-    </script>
+  <!-- ═══════════ FAQ ═══════════════ -->
+  <h2 style="font-size:22px;font-weight:900;text-align:center;margin:30px 0 16px;">よくある質問</h2>
+
+  <details open>
+    <summary>申請に費用はかかりますか？</summary>
+    <div class="answer">いいえ。制度への申請はすべて無料です（行政手数料がかかる一部を除く）。また、当サイトの診断サービスも完全無料でご利用いただけます。</div>
+  </details>
+
+  <details>
+    <summary>年金を受給していても申請できますか？</summary>
+    <div class="answer">はい。年金受給の有無は多くの制度の対象条件に含まれていません。特に住宅補助や医療費控除は年金受給者でも申請可能です。</div>
+  </details>
+
+  <details>
+    <summary>夫婦どちらが申請すればいいですか？</summary>
+    <div class="answer">制度により異なります。世帯主、収入が多い方、対象工事の契約者など、条件に応じて最適な申請者を診断サービスでご案内します。</div>
+  </details>
+
+  <details>
+    <summary>過去の分をさかのぼって申請できますか？</summary>
+    <div class="answer">制度により異なります。医療費控除は5年、一部の補助金は2年〜3年さかのぼって申請可能です。まずは無料診断で確認してください。</div>
+  </details>
+
+  <!-- ═══════════ BOTTOM CTA ═══════════════ -->
+  <div class="big-cta" style="margin-top:40px;">
+    <h2>💰 対象制度を<strong style="color:var(--primary);">1分</strong>で診断</h2>
+    <p>45歳以上の方の<strong>8割が見落としている給付金・補助金</strong>。<br>無料診断であなたが受け取れる金額を今すぐチェック。</p>
+    <a href="#" class="cta-btn">無料診断を始める（1分で完了）</a>
+    <p class="cta-sub">※2026年7月17日現在 16,482名が診断済み</p>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 給付金ナビ | 社会保障労務士法人 監修</p>
+  <p style="margin-top:4px;">本サイトはGoogleディスプレイ広告を通じて情報提供を行っています。</p>
+</footer>
+
 </body>
 </html>
